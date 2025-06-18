@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: contabot-webhook
+    env: python
+    buildCommand: ""
+    startCommand: "gunicorn -b 0.0.0.0:5000 Dialogflow_contabot_webhook:app"
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: CONTALINK_API_TOKEN
+        sync: false
